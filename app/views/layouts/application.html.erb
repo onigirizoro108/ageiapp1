@@ -7,12 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="contents">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
   <header class="navbar navbar-fixed-top navbar-inverse">
     <div class="navbar-inner">
       <div class="container">
         <%= link_to "Demo App", root_path, id: "logo" %>
         <nav>
           <ul class="nav pull-right">
+            <li><%= link_to('Sign out', [ :destroy, :user_session ], :method => :delete, :class => 'signOut') if current_user %></li>
             <li><%= link_to "Home",    root_path %></li>
             <li><%= link_to "Help",    help_path %></li>
           </ul>
@@ -30,7 +35,7 @@
     </small>
     <nav>
       <ul>
-        <li><%= link_to "Contact", 'http://www.twitter.com/joewadcan' %></li>
+   
         
       </ul>
     </nav>

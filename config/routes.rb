@@ -1,6 +1,17 @@
 Ageiapp1::Application.routes.draw do
+  resources :products
   root 'welcome#home'
   match '/help', to:'welcome#help', via:'get'
+  
+  devise_for :users  
+  get 'products', :to => 'products', :as => :user_root  
+  
+  resources :products, :only => [ :index, :create ] do  
+    put :finish, :on => :member  
+    put :unfinish, :on => :member  
+    get :done, :on => :collection  
+  end  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

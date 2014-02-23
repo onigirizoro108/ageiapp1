@@ -4,6 +4,8 @@
   <h2>
     Welcome to the home page of my Demo app! 
   </h2>
- 
+  <%= link_to 'ログイン', [ :new, :user_session ], class: "btn btn-large btn-primary"   %>
+  <%= link_to 'ユーザー登録', [ :new, :user_registration ], class: "btn btn-large btn-primary"   %>
+  <%= link_to 'パスワード再発行', [ :new, :user_password ], class: "btn btn-large btn-primary"   %>
   <%= link_to "Help is here!", help_path, class: "btn btn-large btn-primary" %>
 </div>
